@@ -34,8 +34,8 @@ public class CountDownView extends View {
     private int mStrokeBgColor = DEFAULT_STROKE_BG_COLOR;
 
     private Paint mBgPaint = new Paint();
-    private Paint mStrokePaint = new Paint();
     private Paint mStrokeBgPaint = new Paint();
+    private Paint mStrokePaint;
     private RectF oval = new RectF();
 
     private ValueAnimator animator;
@@ -74,12 +74,6 @@ public class CountDownView extends View {
         mStrokeBgPaint.setColor(mStrokeBgColor);
         mStrokeBgPaint.setStrokeWidth(mStrokeBgSize);
         mStrokeBgPaint.setStyle(Paint.Style.STROKE);
-        // 进度条
-        if (mStrokeColor_1 == 0) {
-            setStrokeColor(mStrokeColor_0);
-        } else {
-            setStrokeColor(mStrokeColor_0, mStrokeColor_1);
-        }
     }
 
     private void initAnimation() {
@@ -128,13 +122,21 @@ public class CountDownView extends View {
         float height = getHeight();
         float radius = Math.min(width, height) / 2;
         float offset = Math.max(mStrokeSize, mStrokeBgSize) / 2;
+        canvas.rotate(-90, width / 2, height / 2);
+        canvas.drawCircle(width / 2, height / 2, radius - offset, mBgPaint);
+        canvas.drawCircle(width / 2, height / 2, radius - offset, mStrokeBgPaint);
+        // 进度条
+        if (mStrokePaint == null) {
+            if (mStrokeColor_1 == 0) {
+                setStrokeColor(mStrokeColor_0);
+            } else {
+                setStrokeColor(mStrokeColor_0, mStrokeColor_1);
+            }
+        }
         oval.left = width / 2 - radius + offset;
         oval.top = height / 2 - radius + offset;
         oval.right = width / 2 + radius - offset;
         oval.bottom = height / 2 + radius - offset;
-        canvas.rotate(-90, width / 2, height / 2);
-        canvas.drawCircle(width / 2, height / 2, radius - offset, mBgPaint);
-        canvas.drawCircle(width / 2, height / 2, radius - offset, mStrokeBgPaint);
         canvas.drawArc(oval, 0f, mSweepAngle, false, mStrokePaint);
     }
 
@@ -230,6 +232,9 @@ public class CountDownView extends View {
      * 进度条颜色
      */
     public void setStrokeColor(int strokeColor) {
+        if (mStrokePaint == null) {
+            mStrokePaint = new Paint();
+        }
         mStrokeColor_0 = strokeColor;
         mStrokePaint.reset();
         mStrokePaint.setAntiAlias(true);
@@ -240,6 +245,9 @@ public class CountDownView extends View {
     }
 
     public void setStrokeColor(int topColor, int bottomColor) {
+        if (mStrokePaint == null) {
+            mStrokePaint = new Paint();
+        }
         mStrokeColor_0 = topColor;
         mStrokeColor_1 = bottomColor;
         int[] colors = new int[]{mStrokeColor_0, mStrokeColor_1, mStrokeColor_0};

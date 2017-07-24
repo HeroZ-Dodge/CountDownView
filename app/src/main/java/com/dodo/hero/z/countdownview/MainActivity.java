@@ -19,5 +19,30 @@ public class MainActivity extends AppCompatActivity {
                 countDownView.startAnimation();
             }
         });
+
+        final CountDownView countDownView0 = (CountDownView) findViewById(R.id.count_down_0);
+        countDownView0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                countDownView0.startAnimation();
+            }
+        });
+
+        final CountDownView countDownView1 = (CountDownView) findViewById(R.id.count_down_1);
+        countDownView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                countDownView1.startAnimation();
+            }
+        });
+
+        final CountDownView countDownView2 = (CountDownView) findViewById(R.id.count_down_2);
+        countDownView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                countDownView2.startAnimation();
+            }
+        });
+
     }
 }
