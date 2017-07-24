@@ -27,3 +27,5 @@ __cdv_stroke_bg_size__ ： 进度条背景颜色宽度
 ####  预览图
 
 ![预览图片](http://otl6q0j52.bkt.clouddn.com/device-2017-07-24-162454.png)
+
+
