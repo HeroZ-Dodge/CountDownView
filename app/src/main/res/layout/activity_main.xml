@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.dodo.hero.z.countdownview.MainActivity">
+
+    <com.z.hero.dodge.countdown.CountDownView
+        android:id="@+id/count_down"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="8dp"
+        app:cdv_bg="#424666"
+        app:cdv_stroke_bg_size="12dp"
+        app:cdv_stroke_color_0="#fff"
+        app:cdv_stroke_color_1="@color/colorPrimary"
+        app:cdv_stroke_size="4dp"/>
+
+    <com.z.hero.dodge.countdown.CountDownView
+        android:id="@+id/count_down_0"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="8dp"
+        app:cdv_bg="#424666"
+        app:cdv_stroke_bg_size="12dp"
+        app:cdv_stroke_color_0="#FFFFB200"
+        app:cdv_stroke_color_1="#FFF76B1C"
+        app:cdv_stroke_size="4dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <com.z.hero.dodge.countdown.CountDownView
+        android:id="@+id/count_down_1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="8dp"
+        app:cdv_bg="@color/colorPrimary"
+        app:cdv_stroke_bg_color="@color/colorAccent"
+        app:cdv_stroke_bg_size="12dp"
+        app:cdv_stroke_size="9dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <com.z.hero.dodge.countdown.CountDownView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+</LinearLayout>
