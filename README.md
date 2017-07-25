@@ -17,7 +17,7 @@
 __cdv_bg__ : 背景颜色       
 __cdv_duration__ : 动画持续时间       
 __cdv_stroke_color_0__ ： 进度条颜色（_单色_）      
-__cdv_stroke_color_2__ ： 进度条颜色（_进度条颜色变成渐变，从cdv_stroke_color_0 变成 cdv_stroke_color_1_）         
+__cdv_stroke_color_1__ ： 进度条颜色（_进度条颜色变成渐变，从cdv_stroke_color_0 变成 cdv_stroke_color_1_）         
 __cdv_stroke_size__ :  进度条宽度        
 __cdv_stroke_bg_color__ ： 进度条背景颜色宽度     
 __cdv_stroke_bg_size__ ： 进度条背景颜色宽度      
